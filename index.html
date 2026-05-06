@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Profesional & CV Digital | Nurul Hamiza</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #6b0f0f; /* Maroon Elegant */
+            --accent: #c5a059;  /* Soft Gold */
+            --dark: #1e1e1e;
+            --white: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fdf6e3 0%, #fef9f0 50%, #fff5eb 100%);
+            color: var(--text-main);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Marcellus', serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #800000 0%, #6b0f0f 50%, #5a0c0c 100%);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(107, 15, 15, 0.3);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--accent); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.85);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, #800000 0%, #a52a2a 40%, #c5a059 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text { flex: 1.2; }
+        .hero-image { flex: 0.8; text-align: center; }
+
+        .hero-image img {
+            width: 320px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 25px 25px 0 var(--accent);
+            border: 8px solid rgba(255,255,255,0.3);
+        }
+
+        .badge {
+            background: var(--accent);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Detailed Information Section */
+        section { padding: 80px 0; }
+
+        .section-title {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+
+        .section-title .line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #e0c590);
+            margin-top: 10px;
+        }
+
+        /* Info Grid */
+        .info-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fef9f0 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 40px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #fff9f0 0%, #fff5eb 100%);
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.15);
+        }
+
+        .info-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 5px;
+            width: 25px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .info-item p {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        /* Work & Education Timeline */
+        .bg-gradient-1 {
+            background: linear-gradient(135deg, #800000 0%, #a52a2a 100%);
+            padding: 80px 0;
+        }
+
+        .bg-gradient-2 {
+            background: linear-gradient(135deg, #fef9f0 0%, #f5ebe0 100%);
+            padding: 80px 0;
+        }
+
+        .bg-gradient-3 {
+            background: linear-gradient(135deg, #c5a059 0%, #d4b06a 50%, #e0c590 100%);
+            padding: 80px 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 30px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .sub {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-item .date {
+            font-size: 0.8rem;
+            background: var(--primary);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: linear-gradient(145deg, #ffffff 0%, #fef9f0 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .skill-box:hover { 
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.2);
+        }
+
+        .skill-box i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .skill-box h4 { 
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+        }
+
+        /* Homestay Gallery Template */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--card-shadow);
+            border: 4px solid var(--white);
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(107, 15, 15, 0.8));
+            padding: 20px;
+            color: #fff;
+            transform: translateY(100%);
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item .overlay h4 {
+            font-size: 1.1rem;
+            font-family: 'Marcellus', serif;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 50%, #3a3a3a 100%);
+            color: var(--white);
+            border-radius: 25px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(197,160,89,0.1) 0%, transparent 70%);
+        }
+
+        .contact-text { position: relative; z-index: 1; }
+        .contact-form { position: relative; z-index: 1; }
+
+        .contact-text h2 { color: var(--accent); font-size: 2.5rem; }
+        .contact-text p { color: rgba(255,255,255,0.8); }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent) 0%, #d4b06a 100%);
+            color: var(--dark);
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #800000 0%, #6b0f0f 100%);
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-flex, .grid-2, .contact-box, .gallery-grid {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-image img { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">NH<span>.</span>Portfolio</a>
+            <ul>
+                <li><a href="#home">Utama</a></li>
+                <li><a href="#about">Maklumat Peribadi</a></li>
+                <li><a href="#experience">Kerjaya & Pendidikan</a></li>
+                <li><a href="#features">Keistimewaan</a></li>
+                <li><a href="#skills">Kemahiran</a></li>
+                <li><a href="#contact">Hubungi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <div class="hero-flex">
+                <div class="hero-text">
+                    <span class="badge">PROFIL PROFESIONAL</span>
+                    <h1>Nurul Hamiza <br>Binti Junaidi</h1>
+                    <p>Pekerja Hospitaliti & Pengurusan Penginapan | Haura Homestay</p>
+                    <div style="margin-top: 30px;">
+                        <a href="#contact" class="btn-submit" style="text-decoration: none; padding: 15px 30px; display: inline-block; width: auto;">Hubungi Saya</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src=image/profile.jpeg alt="Nurul Hamiza">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Maklumat Peribadi -->
+    <section id="about" class="container">
+        <div class="section-title">
+            <h2>Maklumat Diri</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="info-card">
+            <div class="grid-2">
+                <div class="info-item">
+                    <i class="fas fa-user"></i>
+                    <div>
+                        <label>Nama Penuh</label>
+                        <p>Nurul Hamiza Binti Junaidi</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <label>Umur</label>
+                        <p>35 Tahun</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-venus-mars"></i>
+                    <div>
+                        <label>Jantina</label>
+                        <p>Perempuan</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-heart"></i>
+                    <div>
+                        <label>Status</label>
+                        <p>Berkahwin</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <label>No. Telefon</label>
+                        <p>0147353425</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <label>E-mel</label>
+                        <p>nurhamiza44@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item" style="grid-column: span 2;">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <label>Alamat Pekerjaan</label>
+                        <p>Haura Homestay</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Kerjaya & Pendidikan -->
+    <section id="experience" class="bg-gradient-1">
+        <div class="container">
+            <div class="grid-2">
+                <!-- Latar Belakang Pendidikan -->
+                <div>
+                    <div class="section-title">
+                        <h2 style="color: #fff;">Latar Belakang Pendidikan</h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="date">Tamat: 2012</span>
+                            <h3>Kejururawatan</h3>
+                            <span class="sub">Institusi Pengajian Tinggi</span>
+                            <p>Lulusan dalam bidang Kejururawatan dengan pengetahuan dalam penjagaan kesihatan dan perkhidmatan hospitaliti.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengalaman Bekerja -->
+                <div>
+                    <div class="section-title">
+                        <h2 style="color: #fff;">Pengalaman Bekerja</h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="date">2025 - Sekarang (6 Bulan)</span>
+                            <h3>Pekerja</h3>
+                            <span class="sub">Haura Homestay</span>
+                            <p>Menguruskan pendaftaran tetamu, pembersihan dan penyelenggaraan bilik, serta memberikan perkhidmatan yang mesra kepada pelanggan Haura Homestay.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Kemahiran -->
+    <section id="skills" class="container">
+        <div class="section-title">
+            <h2>Kemahiran Dalam Bekerja</h2>
+            <div class="line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <i class="fab fa-windows"></i>
+                <h4>Microsoft Office</h4>
+                <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-users"></i>
+                <h4>Perkhidmatan Pelanggan</h4>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h4>Penjagaan & Perhatian</h4>
+                <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-clipboard-check"></i>
+                <h4>Pengurusan Rekod</h4>
+                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Keistimewaan & Lokasi -->
+    <section id="features" class="bg-gradient-3">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--primary);">Keistimewaan Haura Homestay</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="info-card" style="background: rgba(255,255,255,0.9);">
+                <div class="grid-2">
+                    <div class="info-item" style="grid-column: span 2;">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <div>
+                            <label>Lokasi Strategik & Pilihan Utama Pelancong</label>
+                            <p>Haura Homestay mempunyai lokasi yang stratergik terletak di pekan Kangar. Homestay Haura dijadikan sebagai pilihan oleh pelancong tempatan kerana kemudahan fasiliti di kawasan sekitar mudah untuk digunakan dan didapati.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <label>Kawasan Selamat</label>
+                            <p>Terletak di kawasan kejiranan yang tenang dan selamat, sesuai untuk penginapan keluarga atau urusan kerja.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <label>Perkhidmatan Terbaik</label>
+                            <p>Kami mementingkan kebersihan dan keselesaan tetamu dengan layanan yang mesra dan profesional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Galeri Haura Homestay -->
+    <section id="gallery" class="bg-gradient-2">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Haura Homestay</h2>
+                <div class="line"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src=image/homestay1.jpeg alt="Ruang Makan">
+                    <div class="overlay"><h4>Ruang Makan</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src=image/homestay2.jpeg alt="Hiasan Lampu">
+                    <div class="overlay"><h4>Hiasan Lampu Mewah</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src=image/homestay3.jpeg alt="Sudut Santai">
+                    <div class="overlay"><h4>Sudut Santai</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src=image/homestay4.jpeg alt="Kemudahan Dapur">
+                    <div class="overlay"><h4>Kemudahan Memasak</h4></div>
+                </div>
+                <div class="gallery-item">
+                    <img src=image/homestay5.jpeg alt="Hiburan">
+                    <div class="overlay"><h4>Sudut Hiburan</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Contact -->
+    <section id="contact" class="container">
+        <div class="contact-box">
+            <div class="contact-text">
+                <h2>Berminat Untuk Bekerjasama?</h2>
+                <p>Saya sedia memberikan khidmat terbaik untuk Haura Homestay dan pelanggan kami.</p>
+                <div style="margin-top: 30px;">
+                    <p><i class="fab fa-whatsapp" style="color: #25d366;"></i> 0147353425</p>
+                    <p><i class="fas fa-envelope" style="color: var(--accent);"></i> nurhamiza44@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Nama Anda" required>
+                    <input type="email" placeholder="Email Anda" required>
+                    <textarea placeholder="Mesej / Pertanyaan" rows="5" required></textarea>
+                    <button type="submit" class="btn-submit" style="background: var(--white); color: var(--primary);">Hantar Mesej</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Portfolio Nurul Hamiza. Haura Homestay.</p>
+    </footer>
+
+</body>
+</html>
